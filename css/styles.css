@@ -1,24 +1,25 @@
-:root{
-  --brand:#5a52e7;
-  --brand-2:#22c55e;
-  --dark:#0f172a;
-  --muted:#000000;
-  --light:#f8fafc;
+:root {
+  --brand: #5a52e7;
+  --brand-2: #22c55e;
+  --dark: #0f172a;
+  --muted: #000000;
+  --light: #f8fafc;
 }
 
 /* Base & Tipografía */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
-  color: #0b1220;
+  color: #0b1230;
   background: #fff;
 }
 
-/* Utilidad fondo gris general para bloques */
-.bg-custom { background-color: #d3d3d3 !important; }
-
-/* Imagen del logo */
-.navbar-brand img { max-height: 40px; width: auto; }
+/* Utilidad: fondo gris para bloques */
+.bg-custom {
+  background-color: #d3d3d3 !important;
+}
 
 /* Header / Navbar */
 .site-header {
@@ -29,98 +30,71 @@ body {
   z-index: 1000;
 }
 
-/* Icono gradiente opcional si usas <span class="logo-icon"> */
-.navbar-brand .logo-icon{
-  width: 28px; height: 28px; border-radius: 8px;
-  background: linear-gradient(135deg, var(--brand), #0d6efd);
-  display: inline-block;
+/* Logo */
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
 }
 
-/* Links del menú + efecto “parece botón” al hover */
-.navbar-nav .nav-link{
-  color: #000000;
+.navbar-nav .nav-link {
   position: relative;
   padding: 8px 15px;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
-.navbar-nav .nav-link:hover{
+
+.navbar-nav .nav-link:hover {
   background-color: #0d6efd;
   color: #fff !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
-/* Botones primarios coherentes con la marca */
-.btn-primary{ background: var(--brand); border-color: var(--brand); }
-.btn-outline-primary{ color: var(--brand); border-color: var(--brand); }
-.btn-outline-primary:hover{ background: var(--brand); border-color: var(--brand); }
+/* Botones */
+.btn-primary {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-outline-primary {
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-outline-primary:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+}
 
 /* Hero */
-.hero{
+.hero {
   position: relative;
   min-height: 72vh;
   padding: 4rem 0;
   background: linear-gradient(180deg, #ffffff 0%, #d3d3d3 100%);
 }
 
-/* Patrón de fondo y asegurar que no bloquee clicks */
-.hero .container { position: relative; z-index: 1; }
-.hero-bg-pattern{
-  position: absolute; inset: 0; z-index: 0;
-  background-image: radial-gradient(rgba(79,70,229,.08) 1px, transparent 1px);
-  background-size: 20px 20px;
-  mask: linear-gradient(180deg, #000 60%, transparent);
-  pointer-events: none;
-}
-
-/* Secciones / Tarjetas genéricas */
-.feature-card{
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.feature-card:hover{
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
-.feature-card i{ color: var(--brand); }
-
-.service-card i{ color: var(--brand-2); }
-
-.team-card img{ height: 220px; object-fit: cover; }
-
-
-/* SERVICIOS */
+/* Servicios */
 .service-card {
-  border: 2px solid #000;              /* Borde negro */
-  border-radius: 12px;                 /* Esquinas más suaves */
-  padding: 1.5rem;                     /* Más espacio interno */
-  transition: transform 0.3s ease, 
-              box-shadow 0.3s ease;    /* Animación suave */
-  background: #f0efef;                    /* Fondo blanco limpio */
+  background: #f0efef;
+  border: 2px solid #000;
+  border-left-width: 6px; /* línea negra lateral */
+  border-radius: 12px;
+  padding: 1.5rem;
   height: 100%;
-}
-
-.custom-panel {
-  max-width: 800px;            /* Mantener ancho controlado */
-  background-color: #f0efef;   /* Fondo gris */
-  border-radius: 10px;         /* Bordes redondeados */
-}
-
-.custom-panel .card-body {
-  color: #000;                 /* Texto negro */
-  font-size: 1rem;             /* Tamaño uniforme */
-}
-
-.service-card i {
-  color: var(--brand-2);               /* Color del ícono */
-  font-size: 2.5rem;                   /* Íconos más grandes */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .service-card:hover {
-  transform: translateY(-10px) scale(1.05);  /* Animación de elevación */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
-  border-color: var(--brand);                /* Cambia el borde al color principal */
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  border-color: var(--brand);
+}
+
+.service-card i {
+  color: var(--brand-2);
+  font-size: 2.5rem;
 }
 
 .service-card .card-title {
@@ -133,89 +107,84 @@ body {
   color: #413f3f;
   font-size: 0.95rem;
 }
-.service-card {
-  border-left: 6px solid #000;   /* Línea negra a la izquierda */
-  border-radius: 10px;           /* Bordes redondeados */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Portafolio (bordes negros) */
-.project-card{
-  border: 2px solid #000;
-  border-radius: 10px;
-  background: #fff;
-  overflow: hidden;                /* respeta el radio en la imagen */
-  transition: transform .3s ease, box-shadow .3s ease;
-  cursor: pointer;
-}
-.project-card img{
-  height: 200px;                   /* uniforma alturas */
-  object-fit: cover;
-  border-bottom: 2px solid #c4c1c1;   /* separación visual de la imagen */
-}
-.project-card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 14px 30px rgba(0,0,0,.15);
-}
-.project-card .card-body{ padding: 1.2rem; }
-.project-card .card-title{
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #000;
-}
-.project-card .card-text{
-  font-size: 0.9rem;
-  color: #333;
-}
+/* Proyecto */
 .project-card {
-  border-left: 6px solid #000;   /* Línea negra al lado izquierdo */
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
   background: #fff;
-}
-
-.project-card img {
-  height: 200px;                 /* Mantener altura uniforme */
-  object-fit: cover;
-  border-bottom: 2px solid #000; /* Línea negra entre imagen y texto */
+  border: 2px solid #000;
+  border-left-width: 6px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ==========================
-   Panel de Portafolio
-   ========================== */
+.project-card img {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #000;
+}
+
+.project-card .card-body {
+  padding: 1.2rem;
+}
+
+.project-card .card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.project-card .card-text {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Portafolio Panel */
 .portfolio-panel {
-  max-width: 700px;              /* Ancho máximo */
-  background-color: #e7e6e6;     /* Color de fondo */
-  border-radius: 10px;           /* Bordes redondeados */
-  padding: 1rem;               /* Espaciado interno */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra ligera */
-  text-align: center;            /* Texto centrado */
+  max-width: 700px;
+  background: #e7e6e6;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .portfolio-panel p {
-  color: #333;                   /* Texto gris oscuro */
-  font-size: 1rem;               /* Tamaño de fuente */
-  margin: 0;                     /* Elimina margen extra */
+  margin: 0;
+  color: #000000;
+  font-size: 1rem;
 }
 
 /* Footer */
-.site-footer{ background: var(--dark); }
-.site-footer h5{ color: #d3d3d3; }
-.site-footer a:hover{ color: #d3d3d3; }
+.site-footer {
+  background: var(--dark);
+}
 
-/* Responsive */
-@media (max-width: 575.98px){
-  .hero{ min-height: 60vh; }
+.site-footer h5 {
+  color: #d3d3d3;
+}
+
+.site-footer a:hover {
+  color: #d3d3d3;
+}
+
+/* ========================================
+   Responsive Design
+======================================== */
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: 60vh;
+  }
+}
+
+/* Nuestra Historia con fondo de gradiente */
+section.container.py-5 {
+  background: linear-gradient(to bottom, #ffffff, #d3d3d3);
 }
 
